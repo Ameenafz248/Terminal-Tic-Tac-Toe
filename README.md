@@ -14,7 +14,7 @@ Just compile and run the TIC_TAC_TOE.cpp file
 For example, in the terminal, go to the file directory and type the following code:
 
 ```
-g++ -c TIC_TAC_TOE.cpp
+g++ TIC_TAC_TOE.cpp
 ./a.out
 ```
 
