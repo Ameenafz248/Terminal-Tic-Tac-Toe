@@ -147,6 +147,7 @@ void tic_tac_toe::insert(int player){
 }
 void tic_tac_toe::master(){
     int flag=0;
+    reset();
     get_name();
     std::cout<<"Instruction: Enter the index of the position[1 - 9]"<<std::endl;
     while(flag== 0){
