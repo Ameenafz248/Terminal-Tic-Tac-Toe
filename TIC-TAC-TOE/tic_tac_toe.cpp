@@ -42,6 +42,7 @@ class tic_tac_toe{
         }
     }
     void display();
+    void reset();
     void insert(int player);
     void master();
     void get_name();
@@ -185,7 +186,11 @@ void tic_tac_toe::display(){
         std::cout<<"\n\n";
     }
 }
-
+void tic_tac_toe::reset(){
+    for(int i=0;i<3;i++){
+            std::fill(play_board[i],play_board[i]+3,'-');
+        }
+}
 int main(){
     tic_tac_toe game;
     game.start();
