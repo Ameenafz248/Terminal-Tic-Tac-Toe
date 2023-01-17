@@ -51,12 +51,13 @@ class tic_tac_toe{
 };
 void tic_tac_toe::start(){
    while(1){
-    std::cout<<std::setw(15)<<"* * *  * * *  * * *      * * *    *    * * *      * * *  * * *  * * *  "<<std::endl;
-    std::cout<<std::setw(15)<<"  *      *    *            *     * *   *            *    *   *  *      "<<std::endl;
-    std::cout<<std::setw(15)<<"  *      *    *      **    *    * * *  *      **    *    *   *  * * *  "<<std::endl;
-    std::cout<<std::setw(15)<<"  *      *    *            *    *   *  *            *    *   *  *      "<<std::endl;
-    std::cout<<std::setw(15)<<"  *    * * *  * * *        *    *   *  * * *        *    * * *  * * *  "<<std::endl;
-    std::cout<<std::endl;
+    
+std::cout <<"   ▄      ▀                    ▄                           ▄                 \n" 
+<< " ▄▄█▄▄  ▄▄▄     ▄▄▄          ▄▄█▄▄   ▄▄▄    ▄▄▄          ▄▄█▄▄   ▄▄▄    ▄▄▄  \n"
+<< "   █      █    █▀  ▀           █    ▀   █  █▀  ▀           █    █▀ ▀█  █▀  █ \n"
+<< "   █      █    █       ▀▀▀     █    ▄▀▀▀█  █       ▀▀▀     █    █   █  █▀▀▀▀ \n"
+<< "   ▀▄▄  ▄▄█▄▄  ▀█▄▄▀           ▀▄▄  ▀▄▄▀█  ▀█▄▄▀           ▀▄▄  ▀█▄█▀  ▀█▄▄▀ \n\n";                                                                          
+                                                                        
     int choice;
     std::cout<<"1. New game\n2. Quit"<<std::endl;
     do{
