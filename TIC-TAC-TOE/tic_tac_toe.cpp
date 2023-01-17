@@ -155,10 +155,12 @@ void tic_tac_toe::master(){
         display();
         flag=game_cond();
         if(flag==1){
+            std::system("clear");
             std::cout<<player_2.second<<" Wins!\n\n";
             return;
         }
         if(flag==2){
+            std::system("clear");
             std::cout<<"It ended in a draw!\n\n";
             return;
         }
@@ -166,10 +168,12 @@ void tic_tac_toe::master(){
         display();
         flag=game_cond();
         if(flag==1){
+            std::system("clear");
             std::cout<<player_1.second<<" Wins!\n\n";
             return;
         }
         if(flag==2){
+            std::system("clear");
             std::cout<<"It ended in a draw!\n\n";
             return;
         }
@@ -178,8 +182,12 @@ void tic_tac_toe::master(){
     }
 }
 void tic_tac_toe::display(){
+    std::system("clear");
+    for (auto i = 0; i < 5; ++i) {
+        std::cout << '\n';
+    }
     for(int i=0;i<3;i++){
-        std::cout<<std::setw(15);
+        std::cout<<std::setw(20);
         for(int j=0;j<3;j++){
             std::cout<<play_board[i][j]<<std::setw(6);
         }
@@ -196,3 +204,4 @@ int main(){
     game.start();
     
 }
+
