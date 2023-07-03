@@ -1,4 +1,4 @@
-# tic-tac-toe
+# Terminal Tic-Tac-Toe
 __What does the project do?__
 
 The project is the famous TIC-TAC-TOE game written in python using the curses module (a c++ version is also available in the repo).
