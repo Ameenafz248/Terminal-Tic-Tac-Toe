@@ -10,7 +10,7 @@ class tic_tac_toe:
 
     def start(self, stdscr):
         os.system("clear")
-        options = ["| New Game", "| Quit"]
+        options = ["New Game", "Quit    "]
         while (True):
             attributes = {}
             curses.init_pair(1, curses.COLOR_WHITE, curses.COLOR_BLACK)
@@ -32,6 +32,7 @@ class tic_tac_toe:
                         attr = attributes['highlighted']
                     else:
                         attr = attributes['normal']
+                    stdscr.addstr("| ", curses.A_BOLD)
                     stdscr.addstr(options[i] + '\n', attr | curses.A_BOLD)
                 c = stdscr.getch()
                 if c == curses.KEY_UP and option > 0:
