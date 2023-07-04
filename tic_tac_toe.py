@@ -1,5 +1,6 @@
 import os
 import curses
+from curses.textpad import rectangle
 
 
 class tic_tac_toe:
@@ -21,6 +22,7 @@ class tic_tac_toe:
             c = 0
             option = 0
             while c != 10:
+                curses.curs_set(0)
                 stdscr.addstr("   ▄      ▀                    ▄                           ▄                 \n")
                 stdscr.addstr(" ▄▄█▄▄  ▄▄▄     ▄▄▄          ▄▄█▄▄   ▄▄▄    ▄▄▄          ▄▄█▄▄   ▄▄▄    ▄▄▄  \n")
                 stdscr.addstr("   █      █    █▀  ▀           █    ▀   █  █▀  ▀           █    █▀ ▀█  █▀  █ \n")
@@ -42,6 +44,7 @@ class tic_tac_toe:
                 stdscr.erase()
             
             if (option == 0):
+               self.option = [int(0), int(0)]
                self.master(stdscr) 
             else:
                 return
@@ -77,16 +80,30 @@ class tic_tac_toe:
                 if (c == 'q' or c == 'Q'):
                     return [False, 0]
                 stdscr.erase()
-                stdscr.addstr("Player " + str(player + 1)+ "'s turn:\n\n", curses.A_BOLD)
+                stdscr.addstr("Player " + str(player + 1)+ "'s turn:\n\n\n", curses.A_BOLD)
                 for i in range(0, 3):
+                    stdscr.addstr(" ")
                     for j in range(0, 3):
                             if ([i, j] == self.option):
                                 attr = attributes['highlighted']
                             else:
                                 attr = attributes['normal']
                             stdscr.addstr(" " + self.play_board[i][j] + " ", attr | curses.A_BOLD)
+                            stdscr.addstr(" ")
+                            
                             stdscr.addstr("  ")
-                    stdscr.addstr("\n\n")
+                    stdscr.addstr("\n\n\n")
+                rectangle(stdscr, 2, 0, 4, 4)
+                rectangle(stdscr, 2, 6, 4, 10)
+                rectangle(stdscr, 2, 12, 4, 16)
+                rectangle(stdscr, 5, 0, 7, 4)
+                rectangle(stdscr, 5, 6, 7, 10)
+                rectangle(stdscr, 5, 12, 7, 16)
+                rectangle(stdscr, 8, 0, 10, 4)
+                rectangle(stdscr, 8, 6, 10, 10)
+                rectangle(stdscr, 8, 12, 10, 16)
+                curses.curs_set(0)
+                # stdscr.addstr("\n\n")
                 c = stdscr.getch()
                 if c == curses.KEY_UP and self.option[0] > 0:
                         self.option[0] -= 1
